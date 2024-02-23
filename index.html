@@ -2,9 +2,60 @@
 <html>
 <head>
     <title>Random Word Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            padding-top: 10vh; /* Adjusts the starting position of the content */
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+            margin: 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-image: linear-gradient(45deg, #ff00cc, #3333ff);
+            color: #fff;
+            box-shadow: 0 0 15px #ff00cc;
+            transition: transform 0.1s ease-in-out;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        button:active {
+            transform: scale(0.9);
+        }
+        p {
+            margin-top: 20px;
+            font-size: 2em;
+            color: #fff;
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #ff00ff;
+        }
+        @keyframes backgroundAnimation {
+            0% { background-position: 0 0; }
+            50% { background-position: 300% 0; }
+            100% { background-position: 0 0; }
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%; right: -50%; bottom: -50%; left: -50%;
+            background: linear-gradient(115deg, #4d4dff, #00ff00, #ff0000, #4d4dff, #00ff00, #ff0000);
+            background-size: 200% 200%;
+            z-index: -1;
+            animation: backgroundAnimation 10s infinite linear;
+        }
+    </style>
 </head>
 <body>
-    <button onclick="generateWord()">Relja Bot, generiši!!</button>
+    <button onclick="generateWord()">Relja bot!!</button>
     <p id="wordDisplay"></p>
 
     <script>
