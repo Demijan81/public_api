@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Word Generator</title>
+</head>
+<body>
+    <button onclick="generateWord()">Generate Word</button>
+    <p id="wordDisplay"></p>
+
+    <script>
+        const words = ["apple", "banana", "cherry", "date", "elderberry"]; // Your list of words
+
+        function generateWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            document.getElementById("wordDisplay").innerText = words[randomIndex];
+        }
+    </script>
+</body>
+</html>
